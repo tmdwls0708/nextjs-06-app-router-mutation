@@ -40,6 +40,8 @@ export async function createPost(prevState, formData) {
     userId: 1,
   });
 
+  // 리다이렉트 시키기 전에 먼저 페이지를 리렌더링 시킨다.
+  revalidatePath("/feed");
   redirect("/feed");
 }
 
